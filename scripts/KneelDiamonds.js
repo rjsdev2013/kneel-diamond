@@ -1,9 +1,19 @@
 
 import { DiamondSizes } from "./DiamondSizes.js"
-import { JewelryStyles } from "./JewelryStyles.js"
+import { JewelryStyles, jewelryTypes } from "./JewelryStyles.js"
 import { Metals } from "./Metals.js"
 import { Orders } from "./Orders.js"
 import { addCustomOrder} from "./database.js"
+
+
+document.addEventListener(
+    "click",
+    (event) => {
+        if(event.target.value === "necklace"){
+            window.alert('alert')
+        }
+    }
+)
 
 document.addEventListener(
     "click",
@@ -32,7 +42,9 @@ export const KneelDiamonds = () => {
                 ${JewelryStyles()}
             </section>
         </article>
-
+            <section class = "choices_jewelry options">
+                ${jewelryTypes()}
+            </section>
         <article>
             <button id="orderButton">Create Custom Order</button>
         </article>
